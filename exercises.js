@@ -279,7 +279,16 @@ console.log(plainBoxResult);
 
         Invoke your function and pass in your stockCar object, store the result to a variable named isAutomaticTransmission and use `console.log` to inspect your results.
  */
+function detectingTransmission(obj){
+  if(obj.automaticTransmission === true){
+    return "automatic";
+  }else{
+    return "stick shift";
+  }
+}
 
+var isAutomaticTransmission = detectingTransmission(stockCar);
+console.log(isAutomaticTransmission);
 
 /*
    Who's driving this thing?!
@@ -292,7 +301,13 @@ console.log(plainBoxResult);
         Invoke your function and pass in your objects, store the result to a variable named stockCarWithDriver, and inspect 
         your results. Consider using `plainPerson` as your driver.
  */
+function addDriver(car, person){
+  stockCar.driver = person;
+  return car;
+}
 
+var stockCarWithDriver = addDriver(plainPerson);
+console.log(stockCarWithDriver);
 
 /*
     #Final Boss
