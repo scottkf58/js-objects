@@ -213,7 +213,19 @@ console.log(printProcessedOrders(arrayOfObjects));
         Invoke your function and pass in your object, store the result to a variable named sumObjResult and use `console.log` 
         to inspect your results.
 */
+var sumObj = {
+  a: 1,
+  b: 2,
+  result: null
+};
 
+function objectAddition(obj){
+  obj.result = obj.a + obj.b;
+  return obj;
+}
+
+var sumObjResult = objectAddition(sumObj);
+console.log(sumObjResult);
 
 /*
    Print sum function and add as new key-value
@@ -231,8 +243,14 @@ console.log(printProcessedOrders(arrayOfObjects));
         Invoke this function and pass in your object. Further test by changing the values of the object being passed in or 
         **create more** objects and invoke your function multiple times.
  */
+function printObj(obj){
+  objectAddition(obj);
+  obj.output = obj.a+" + "+obj.b+" = "+obj.result;
+  return obj;
+}
 
-
+printObj(sumObj);
+console.log("Print object: "+sumObj.output);
 /*
    Putting stuff in `plainBox`
         Declare a function named putInPlainBox and a single parameter which will be an object. Within this function, write a 
@@ -242,7 +260,14 @@ console.log(printProcessedOrders(arrayOfObjects));
         Invoke your function and pass in your object (which should be `plainBox`), store the result to a variable named 
         plainBoxResult and use `console.log` to inspect your results.
  */
-
+function putInPlainBox(obj){
+  for(var i=0; i<10; i++){
+    obj.contents.push(Math.round(Math.random()*10));
+  }
+  return obj;
+}
+var plainBoxResult = putInPlainBox(plainBox);
+console.log(plainBoxResult);
 
 /*
    Detecting transmission
