@@ -100,8 +100,8 @@ console.log(stockCar);
  */
  var plainPerson = {};
  function buildPerson(person, nameString, age){
-  plainPerson.name = "Scott";
-  plainPerson.age = 25;
+  person.name = "Scott";
+  person.age = 25;
   return person;
  }
 
@@ -191,10 +191,13 @@ var arrayOfObjects =
 ];
 
 function printProcessedOrders(orders){
-  var id = arrayOfObjects.id;
-  var date = "purchase date: "+arrayOfObjects.date;
-  var total = "purchase total: "+arrayOfObjects.total;
-  return orders;
+  for(var i=0; i<orders.length; i++){
+    //console.log(orders[i]);
+    var id = orders.id;
+    var date = "purchase date: "+orders.date;
+    var total = "purchase total: "+orders.total;
+    return orders;
+  }
 }
 
 console.log(printProcessedOrders(arrayOfObjects));
@@ -216,7 +219,7 @@ console.log(printProcessedOrders(arrayOfObjects));
 var sumObj = {
   a: 1,
   b: 2,
-  result: null
+  result: undefined
 };
 
 function objectAddition(obj){
@@ -302,11 +305,11 @@ console.log(isAutomaticTransmission);
         your results. Consider using `plainPerson` as your driver.
  */
 function addDriver(car, person){
-  stockCar.driver = person;
+  car.driver = person;
   return car;
 }
 
-var stockCarWithDriver = addDriver(plainPerson);
+var stockCarWithDriver = addDriver(stockCar, plainPerson);
 console.log(stockCarWithDriver);
 
 /*
