@@ -193,14 +193,17 @@ var arrayOfObjects =
 function printProcessedOrders(orders){
   for(var i=0; i<orders.length; i++){
     //console.log(orders[i]);
-    var id = orders.id;
-    var date = "purchase date: "+orders.date;
-    var total = "purchase total: "+orders.total;
-    return orders;
+    var id = "id: "+orders[i].id;
+    var date = "purchase date: "+orders[i].date;
+    var total = "purchase total: "+orders[i].total;
+    console.log("===============");
+    console.log(id);
+    console.log(date);
+    console.log(total);
   }
 }
 
-console.log(printProcessedOrders(arrayOfObjects));
+(printProcessedOrders(arrayOfObjects));
 
 
 
@@ -284,9 +287,9 @@ console.log(plainBoxResult);
  */
 function detectingTransmission(obj){
   if(obj.automaticTransmission === true){
-    return "automatic";
+    return "My car is automatic";
   }else{
-    return "stick shift";
+    return "I drive stick shift";
   }
 }
 
@@ -344,3 +347,17 @@ console.log(stockCarWithDriver);
         'Marifel, age 19, is riding dirty!'
         'Victor, age 19, is riding dirty!'
  */
+
+ var passengerList = ['Jon', 'Jason', 'Tony', 'Joe', 'Jesse', 'Nigel', 'Kelli', 'Marifel', 'Victor'];
+
+ var passengerAges = ['Jon', 'Jason', 'Tony', 'Joe', 'Jesse', 'Nigel', 'Kelli', 'Marifel', 'Victor'];
+
+ function addPassengers(car, names, ages){
+  car.list = passengerList[i];
+  car.ages = passengerAges[i];
+  console.log(car[i]);
+ }
+
+ 
+
+
